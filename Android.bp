@@ -21715,24 +21715,6 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-	name: "android.hardware.nfc@1.2-service-st",
-	owner: "xiaomi",
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/vendor/bin/hw/android.hardware.nfc@1.2-service-st"],
-			shared_libs: ["nfc_nci.st21nfc.st", "libbase", "libcutils", "libhardware", "liblog", "libutils", "android.hardware.nfc@1.0", "android.hardware.nfc@1.1", "android.hardware.nfc@1.2", "libhidlbase", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "64",
-	strip: {
-		none: true,
-	},
-	prefer: true,
-	relative_install_path: "hw",
-	soc_specific: true,
-}
-
-cc_prebuilt_binary {
 	name: "android.hardware.secure_element@1.2-service-mediatek",
 	owner: "xiaomi",
 	target: {
