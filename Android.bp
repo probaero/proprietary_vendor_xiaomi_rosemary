@@ -8,7 +8,6 @@ soong_namespace {
         "hardware/mediatek/libmtkperf_client",
         "hardware/xiaomi",
         "vendor/xiaomi/rosemary",
-        "device/xiaomi/rosemary",
     ],
 }
 
@@ -201,58 +200,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "android.hardware.thermal@2.0-impl",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/hw/android.hardware.thermal@2.0-impl.so",
-            ],
-            shared_libs: [
-                "libc",
-                "liblog",
-                "libhardware",
-                "libbase",
-                "libcutils",
-                "libutils",
-                "libhidlbase",
-                "android.hardware.thermal@1.0",
-                "android.hardware.thermal@2.0",
-                "libc++",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/hw/android.hardware.thermal@2.0-impl.so",
-            ],
-            shared_libs: [
-                "libc",
-                "liblog",
-                "libhardware",
-                "libbase",
-                "libcutils",
-                "libutils",
-                "libhidlbase",
-                "android.hardware.thermal@1.0",
-                "android.hardware.thermal@2.0",
-                "libc++",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    relative_install_path: "hw",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "audio.primary.mt6785",
     owner: "xiaomi",
     strip: {
@@ -264,6 +211,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/hw/audio.primary.mt6785.so",
             ],
             shared_libs: [
+                "libstagefright_foundation-v33",
                 "libhidlbase",
                 "vendor.mediatek.hardware.mtkpower@1.0",
                 "liblog",
@@ -6324,34 +6272,6 @@ cc_prebuilt_library_shared {
                 "libstagefright_foundation",
                 "libksensor",
                 "libaedv",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    relative_install_path: "hw",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "thermal_hal",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/hw/thermal_hal.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libhardware",
                 "libc++",
                 "libc",
                 "libm",
@@ -20844,22 +20764,22 @@ cc_prebuilt_library_shared {
                 "libSonyIMX386PdafLibraryWrapper",
                 "libSonyIMX338PdafLibraryWrapper",
                 "libSonyIMX519PdafLibraryWrapper",
-                "ov64b40semco_mipi_raw_india_IdxMgr",
                 "ov64b40semco_mipi_raw_IdxMgr",
-                "ov64b40ofilm_mipi_raw_india_IdxMgr",
+                "ov64b40semco_mipi_raw_india_IdxMgr",
                 "ov64b40ofilm_mipi_raw_IdxMgr",
+                "ov64b40ofilm_mipi_raw_india_IdxMgr",
                 "ov13b10sunny_mipi_raw_IdxMgr",
                 "ov13b10sunny_mipi_raw_india_IdxMgr",
-                "ov13b10ofilm_mipi_raw_IdxMgr",
                 "ov13b10ofilm_mipi_raw_india_IdxMgr",
+                "ov13b10ofilm_mipi_raw_IdxMgr",
                 "imx355ofilm_mipi_raw_IdxMgr",
                 "imx355ofilm_mipi_raw_india_IdxMgr",
                 "imx355sunny_mipi_raw_india_IdxMgr",
                 "imx355sunny_mipi_raw_IdxMgr",
-                "ov02b1bofilm_mipi_raw_IdxMgr",
                 "ov02b1bofilm_mipi_raw_india_IdxMgr",
-                "gc02m1ofilm_mipi_raw_india_IdxMgr",
+                "ov02b1bofilm_mipi_raw_IdxMgr",
                 "gc02m1ofilm_mipi_raw_IdxMgr",
+                "gc02m1ofilm_mipi_raw_india_IdxMgr",
                 "gc02m1sunny_mipi_raw_IdxMgr",
                 "gc02m1sunny_mipi_raw_india_IdxMgr",
                 "gc02m1bsunny_mipi_mono_IdxMgr",
@@ -24411,7 +24331,7 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libsync",
                 "libcutils",
-                "libui",
+                "libui-v34",
                 "libmtkcam_stdutils",
                 "libmtkcam_ulog",
                 "libhidlbase",
@@ -30134,7 +30054,6 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/libsink-mtk.so",
             ],
             shared_libs: [
-                "libshim_sink",
                 "libbinder",
                 "libcutils",
                 "libgui",
@@ -30173,7 +30092,6 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/libsource.so",
             ],
             shared_libs: [
-                "libui_shim",
                 "libbinder",
                 "libcutils",
                 "libgui",
@@ -31182,39 +31100,6 @@ cc_prebuilt_binary {
                 "vendor.mediatek.hardware.mtkradioex@3.0",
                 "libc++",
                 "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "hw",
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "android.hardware.thermal@2.0-service.mtk",
-    owner: "xiaomi",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hw/android.hardware.thermal@2.0-service.mtk",
-            ],
-            shared_libs: [
-                "libc",
-                "liblog",
-                "libhardware",
-                "libcutils",
-                "libbase",
-                "libhidlbase",
-                "libutils",
-                "android.hardware.thermal@2.0",
-                "android.hardware.thermal@1.0",
-                "libc++",
                 "libm",
                 "libdl",
             ],
