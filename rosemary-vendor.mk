@@ -6,7 +6,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/rosemary
 
 PRODUCT_COPY_FILES += \
-    vendor/xiaomi/rosemary/proprietary/system_ext/etc/init/init.vtservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.vtservice.rc \
     vendor/xiaomi/rosemary/proprietary/system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.hotwordenrollment.common.util.xml \
     vendor/xiaomi/rosemary/proprietary/vendor/etc/.tp/.ht120.mtc:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/.ht120.mtc \
     vendor/xiaomi/rosemary/proprietary/vendor/etc/.tp/.thermal_policy_08:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/.thermal_policy_08 \
@@ -1554,32 +1553,10 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.videotelephony@1.0_vendor \
     vendor.microtrust.hardware.soter@1.0 \
     wechat.beanpod \
-    libcomutils \
-    libimsma \
-    libimsma_adapt \
-    libimsma_rtp \
-    libimsma_socketwrapper \
-    libmtk_vt_service \
-    libmtk_vt_wrapper \
-    libsignal \
-    libsink-mtk \
-    libsource \
-    libvcodec_cap \
-    libvcodec_capenc \
-    libvt_avsync \
     vendor.mediatek.hardware.videotelephony-V1-ndk \
     vendor.mediatek.hardware.videotelephony@1.0 \
-    ImsService \
     HotwordEnrollmentOKGoogleCORTEXM4 \
     HotwordEnrollmentXGoogleCORTEXM4 \
-    mediatek-common \
-    mediatek-framework \
-    mediatek-ims-base \
-    mediatek-ims-common \
-    mediatek-ims-extension-plugin \
-    mediatek-telecom-common \
-    mediatek-telephony-base \
-    mediatek-telephony-common \
     com.android.hotwordenrollment.common.util \
     android.hardware.neuralnetworks@1.3-service-mtk-dsp-gpu.xml \
     gnss-mtk.xml \
@@ -1661,8 +1638,7 @@ PRODUCT_PACKAGES += \
     wlan_assistant \
     wmt_launcher \
     wmt_loader \
-    xcap \
-    vtservice
+    xcap
 
 PRODUCT_PACKAGES += \
     vendor_bin_hw_android_hardware_media_c2@1_2-mediatek \
